@@ -99,7 +99,7 @@ class TimelineViewController: ExampleViewController {
 		}
 	}
 	
-	func timelineProgressChanged(_ sender: UISlider) {
+    @objc func timelineProgressChanged(_ sender: UISlider) {
 		timelineProgressValue.text = "\(Int(round(sender.value * 100)))%"
 		
 		if let timeline = animation as? Timeline {

@@ -94,7 +94,7 @@ final internal class TweenCache {
 		}
 		
 		if let tweens = tweenCache[obj] {
-			if let index = tweens.index(of: tween) {
+            if let index = tweens.firstIndex(of: tween) {
 				tweenCache[obj]?.remove(at: index)
 			}
 			

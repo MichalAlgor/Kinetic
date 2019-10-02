@@ -37,7 +37,7 @@ public class TweenRange {
 	}
 }
 
-public class Timeline: Animation {
+public final class Timeline: Animation {
 	private(set) public var children = [TweenRange]()
 	weak public var timeline: Timeline?
 	override public var endTime: TimeInterval {
@@ -434,7 +434,7 @@ public class Timeline: Animation {
 			var idx = 1
 			var multiplier: TimeInterval = 1
 			while idx < match.numberOfRanges {
-				let range = match.rangeAt(idx)
+                let range = match.range(at: idx)
 				if range.length <= string.length && range.location < string.length {
 					let val = string.substring(with: range)
 					// label

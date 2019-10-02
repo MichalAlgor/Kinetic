@@ -39,32 +39,32 @@ class ExampleViewController: UIViewController {
 
 		playButton = UIButton(type: .roundedRect)
 		playButton.translatesAutoresizingMaskIntoConstraints = false
-		playButton.setTitle("Play", for: UIControlState())
+        playButton.setTitle("Play", for: .normal)
 		playButton.addTarget(self, action: #selector(ExampleViewController.play), for: .touchUpInside)
 		view.addSubview(playButton)
 		
 		stopButton = UIButton(type: .roundedRect)
 		stopButton.translatesAutoresizingMaskIntoConstraints = false
-		stopButton.setTitle("Stop", for: UIControlState())
-		stopButton.addTarget(self, action: #selector(ExampleViewController.stop), for: .touchUpInside)
+        stopButton.setTitle("Stop", for: .normal)
+		stopButton.addTarget(self, action: #selector(stop), for: .touchUpInside)
 		view.addSubview(stopButton)
 		
 		pauseButton = UIButton(type: .roundedRect)
 		pauseButton.translatesAutoresizingMaskIntoConstraints = false
-		pauseButton.setTitle("Pause", for: UIControlState())
-		pauseButton.addTarget(self, action: #selector(ExampleViewController.pause), for: .touchUpInside)
+        pauseButton.setTitle("Pause", for:.normal)
+		pauseButton.addTarget(self, action: #selector(pause), for: .touchUpInside)
 		view.addSubview(pauseButton)
 		
 		resumeButton = UIButton(type: .roundedRect)
 		resumeButton.translatesAutoresizingMaskIntoConstraints = false
-		resumeButton.setTitle("Resume", for: UIControlState())
-		resumeButton.addTarget(self, action: #selector(ExampleViewController.resume), for: .touchUpInside)
+        resumeButton.setTitle("Resume", for: .normal)
+		resumeButton.addTarget(self, action: #selector(resume), for: .touchUpInside)
 		view.addSubview(resumeButton)
 		
 		resetButton = UIButton(type: .roundedRect)
 		resetButton.translatesAutoresizingMaskIntoConstraints = false
-		resetButton.setTitle("Reset", for: UIControlState())
-		resetButton.addTarget(self, action: #selector(ExampleViewController.reset), for: .touchUpInside)
+        resetButton.setTitle("Reset", for:.normal)
+		resetButton.addTarget(self, action: #selector(reset), for: .touchUpInside)
 		view.addSubview(resetButton)
 		
 		// layout
@@ -119,7 +119,7 @@ class ExampleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 	
-	func play() {
+    @objc func play() {
 		if let animation = animation {
 			animation.on(.updated) { [weak self] (animation) in
 				var progress: Float = 0
@@ -134,30 +134,30 @@ class ExampleViewController: UIViewController {
 		}
 	}
 	
-	func stop() {
+    @objc func stop() {
 		if let animation = animation {
 			animation.stop()
 		}
 	}
 	
-	func pause() {
+    @objc func pause() {
 		if let animation = animation {
 			animation.pause()
 		}
 	}
 	
-	func resume() {
+    @objc func resume() {
 		if let animation = animation {
 			animation.resume()
 		}
 	}
 	
-	func reset() {
+    @objc func reset() {
 		animation?.stop()
 		updateProgress(0)
 	}
 	
-	func progressChanged(_ sender: UISlider) {
+    @objc func progressChanged(_ sender: UISlider) {
 		progressValue?.text = "\(Int(round(sender.value * 100)))%"
 		animation?.totalProgress = Double(sender.value)
 	}

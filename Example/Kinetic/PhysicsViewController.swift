@@ -120,12 +120,12 @@ class PhysicsViewController: ExampleViewController {
 		Kinetic.killTweensOf(square)
 	}
 	
-	func tensionChanged(_ sender: UISlider) {
+    @objc func tensionChanged(_ sender: UISlider) {
 		tensionValue.text = "\(Int(round(sender.value)))"
 		reset()
 	}
 	
-	func frictionChanged(_ sender: UISlider) {
+    @objc func frictionChanged(_ sender: UISlider) {
 		frictionValue.text = "\(Int(round(sender.value)))"
 		reset()
 	}

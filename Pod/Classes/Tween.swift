@@ -52,7 +52,7 @@ public enum TweenMode {
 	case fromTo
 }
 
-public class Tween: Animation {
+public final class Tween: Animation {
 	private(set) public var target: Tweenable
 	public var antialiasing: Bool {
 		get {
@@ -136,7 +136,7 @@ public class Tween: Animation {
 	}
 	
 	@discardableResult
-	open func perspective(_ value: CGFloat) -> Tween {
+	public func perspective(_ value: CGFloat) -> Tween {
 		if var view = target as? ViewType {
 			view.perspective = value
 		}
@@ -144,12 +144,12 @@ public class Tween: Animation {
 	}
 	
 	@discardableResult
-	open func anchor(_ anchor: AnchorPoint) -> Tween {
+	public func anchor(_ anchor: AnchorPoint) -> Tween {
 		return anchorPoint(anchor.point())
 	}
 	
 	@discardableResult
-	open func anchorPoint(_ point: CGPoint) -> Tween {
+	public func anchorPoint(_ point: CGPoint) -> Tween {
 		anchorPoint = point
 		return self
 	}

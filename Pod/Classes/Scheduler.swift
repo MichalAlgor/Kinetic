@@ -27,7 +27,7 @@ final public class Scheduler {
 	fileprivate lazy var displayLink: CADisplayLink = {
 		let link = CADisplayLink(target: self, selector: #selector(Scheduler.update(_:)))
 		link.isPaused = true
-		link.add(to: .current, forMode: .commonModes)
+		link.add(to: .current, forMode: .common)
 		return link
 	}()
 	fileprivate var lastLoopTime: CFTimeInterval
@@ -47,7 +47,7 @@ final public class Scheduler {
 			objc_sync_exit(self)
 		}
 		
-		var subscriber = target
+        let subscriber = target
 		subscribers[subscriber.id] = target
 		
 		resume()

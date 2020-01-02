@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name             = "Kinetic"
-  s.version          = "0.0.1"
+  s.version          = "1.1.2"
   s.summary          = "A super-flexible tweening library for iOS in Swift inspired by GSAP."
 
   s.description      = <<-DESC
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/hugovanderlei/Kinetic.git", :branch => "feature/swift5" }
   s.social_media_url = 'https://twitter.com/u10int'
 
-  s.platform     = :ios, '10.0'
+  s.platform     = :ios, '9.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'

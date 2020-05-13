@@ -8,6 +8,7 @@
 
 import Foundation
 import QuartzCore
+import UIKit
 
 public enum InterpolatableType {
 	case caTransform3D
@@ -134,7 +135,7 @@ extension NSNumber: Interpolatable {
 	}
 	
 	public func vectorize() -> InterpolatableValue {
-		return InterpolatableValue(type: self.interpolatableType, vectors: CGFloat(self))
+        return InterpolatableValue(type: self.interpolatableType, vectors: CGFloat(truncating: self))
 	}
 }
 

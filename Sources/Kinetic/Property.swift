@@ -6,7 +6,9 @@
 //
 //
 
+import CoreGraphics
 import Foundation
+import UIKit
 
 let NullValue: CGFloat = -CGFloat.greatestFiniteMagnitude
 

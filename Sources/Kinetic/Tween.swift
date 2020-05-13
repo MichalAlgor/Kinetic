@@ -89,7 +89,7 @@ public final class Tween: Animation {
 		super.init()
 		
 		self.on(.started) { [unowned self] (animation) in
-			guard var view = self.target as? UIView else { return }
+			guard let view = self.target as? UIView else { return }
 			view.anchorPoint = self.anchorPoint
 		}
 		

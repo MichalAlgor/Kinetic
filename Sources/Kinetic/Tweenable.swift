@@ -343,6 +343,7 @@ extension ViewType where Self: CALayer {
 	}
 }
 
+@available(iOS 9.0, *)
 public class TransformContainerView: UIView {
 	
 	public init(view: UIView) {

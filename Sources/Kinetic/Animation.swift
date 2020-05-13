@@ -335,7 +335,7 @@ public class Animation: Animatable, TimeScalable, Repeatable, Reversable, Subscr
 		
 		if state == .running && ((direction == .forward && elapsed >= end) || (direction == .reversed && elapsed == 0)) && updatesStateOnAdvance {
 			if shouldRepeat {
-				print("\(self) completed - repeating, reverseOnComplete: \(reverseOnComplete), reversed: \(direction == .reversed), repeat count \(cycle) of \(repeatCount)")
+//				print("\(self) completed - repeating, reverseOnComplete: \(reverseOnComplete), reversed: \(direction == .reversed), repeat count \(cycle) of \(repeatCount)")
 				cycle += 1
 				if reverseOnComplete {
 					direction = (direction == .forward) ? .reversed : .forward

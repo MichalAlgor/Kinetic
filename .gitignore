@@ -59,6 +59,8 @@ playground.xcworkspace
 # Swift Package Manager
 # Packages/
 .build/
+/*.xcodeproj
+xcuserdata/
 
 ## CocoaPods
 Pods/

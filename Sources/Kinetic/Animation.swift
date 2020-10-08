@@ -57,7 +57,7 @@ public class Animation: Animatable, TimeScalable, Repeatable, Reversable, Subscr
 				Scheduler.shared.remove(self)
 				completed.trigger(self)
 //				completed.close(self)
-				print("animation \(id) done")
+//				print("animation \(id) done")
 				break
 			}
 		}
